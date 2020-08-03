@@ -1,0 +1,60 @@
+<head>    <title>Rabbit Roomies</title>
+  <link rel="stylesheet" href="style.css"></head>
+
+<body>
+<div class="navbar">
+  <div class="logoimage"></div>
+  <a href="index.html">HOME</a>
+  <a href="about.html">ABOUT</a>
+  <a href="contact.html">CONTACT</a>
+  <div class="theme-switch-wrapper">
+    <label class="theme-switch" for="checkbox">
+        <input type="checkbox" id="checkbox" />
+        <div class="slider round"></div>
+  </label>
+</div>
+</div>
+
+<div class="main">
+  <br>
+  <br><br><br><br>
+  <div class="imgbox"><img class="center-fit" src="comic2.png" alt=""></div>
+  <br><br><br><br><br>
+<a href="index.html"><div class="navfirst"></div></a><a href="index.html"><div class="navprev"></div></a><div class="dropdown"><button class="dropbtn">02</button> <div class="dropdown-content">
+     <a href="index.html">01</a>
+     <a href="03.html">03</a>
+   </div></div><a href="03.html"><div class="navnext"></div></a><a href="03.html"><div class="navlatest"></div></a>
+  <br><br>
+  <div class="footer"><br><br><br><p> &nbsp; &nbsp; &nbsp; &nbsp; Copyright 2020 Molly Pearce.<br>
+  &nbsp; &nbsp; &nbsp; &nbsp; All rights reserved.
+  <p> &nbsp; &nbsp; &nbsp; &nbsp; Special thanks to Kristoffer Francis,<br> &nbsp; &nbsp; &nbsp; &nbsp; Michelle Stewart, Kathleen Pearce, <br> &nbsp; &nbsp; &nbsp; &nbsp; and my bunny Thumper.<br><br><br><br><br><br></div>
+  </div>
+
+
+<script>
+  const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+
+  function switchTheme(e) {
+    if (e.target.checked) {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light'); //add this
+    }
+    else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark'); //add this
+    }
+  }
+
+  toggleSwitch.addEventListener('change', switchTheme, false);
+
+  const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+
+if (currentTheme) {
+    document.documentElement.setAttribute('data-theme', currentTheme);
+
+    if (currentTheme === 'light') {
+        toggleSwitch.checked = true;
+    }
+}
+</script>
+</body>

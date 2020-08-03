@@ -1,0 +1,51 @@
+<head>    <title>Rabbit Roomies</title>
+  <link rel="stylesheet" href="style.css"></head>
+
+<body>
+  <div class="navbar">
+    <div class="logoimage"></div>
+    <a href="index.html">HOME</a>
+    <a href="about.html">ABOUT</a>
+    <a href="contact.html">CONTACT</a>
+    <div class="theme-switch-wrapper">
+      <label class="theme-switch" for="checkbox">
+          <input type="checkbox" id="checkbox"/>
+          <div class="slider round"></div>
+    </label>
+  </div>
+</div>
+
+<div class="main"><div class="imgbox"><img class="left-fit" src="aboutpage4.gif" align="left" alt=""><p align="justify"><br><h1>WHAT IS RABBIT ROOMIES?</h1>Rabbit Roomies is a webcomic I made for my 2020 HSC Multimedia Major Project.<br>It was made using a combination of Photoshop and Blender,<br>and follows the daily lives of characters Ana and Bebe. <br><br> <img src="anabebe.png"></div>
+<h1>WANT TO KNOW MORE? <a href="contact.html">CONTACT US!</a></h1>
+<div class="footer"><br><br><br><p> &nbsp; &nbsp; &nbsp; &nbsp; Copyright 2020 Molly Pearce.<br>
+  &nbsp; &nbsp; &nbsp; &nbsp; All rights reserved.
+  <p> &nbsp; &nbsp; &nbsp; &nbsp; Special thanks to Kristoffer Francis,<br> &nbsp; &nbsp; &nbsp; &nbsp; Michelle Stewart, Kathleen Pearce, <br> &nbsp; &nbsp; &nbsp; &nbsp; and my bunny Thumper.<br><br><br><br><br><br></div>
+</div>
+</body>
+
+<script>
+  const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+
+  function switchTheme(e) {
+    if (e.target.checked) {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light'); //add this
+    }
+    else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark'); //add this
+    }
+  }
+
+  toggleSwitch.addEventListener('change', switchTheme, false);
+
+  const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+
+if (currentTheme) {
+    document.documentElement.setAttribute('data-theme', currentTheme);
+
+    if (currentTheme === 'light') {
+        toggleSwitch.checked = true;
+    }
+}
+</script>
