@@ -1,0 +1,66 @@
+<head>    <title>Rabbit Roomies</title>
+  <link rel="stylesheet" href="style.css"></head>
+
+<body>
+  <div class="navbar">
+    <div class="logoimage"></div>
+    <a href="index.html">HOME</a>
+    <a href="about.html">ABOUT</a>
+    <a href="contact.html">CONTACT</a>
+    <div class="theme-switch-wrapper">
+      <label class="theme-switch" for="checkbox">
+          <input type="checkbox" id="checkbox" />
+          <div class="slider round"></div>
+    </label>
+  </div>
+</div>
+<br><br>
+<div class="main"><br><form
+  action="https://formspree.io/mdowbgre"
+  method="POST"
+>
+  <label>
+    <br>Your email:<br><br>
+    <input type="text" name="_replyto">
+  </label>
+  <label>
+    <br><br>Your message:<br><br>
+    <textarea name="message"></textarea><br><br>
+  </label>
+
+  <!-- your other form fields go here -->
+
+  <button type="submit">Send</button>
+</form>
+<div class="footer"><br><br><br><p> &nbsp; &nbsp; &nbsp; &nbsp; Copyright 2020 Molly Pearce.<br>
+  &nbsp; &nbsp; &nbsp; &nbsp; All rights reserved.
+  <p> &nbsp; &nbsp; &nbsp; &nbsp; Special thanks to Kristoffer Francis,<br> &nbsp; &nbsp; &nbsp; &nbsp; Michelle Stewart, Kathleen Pearce, <br> &nbsp; &nbsp; &nbsp; &nbsp; and my bunny Thumper.<br><br><br><br><br><br></div>
+</div>
+</body>
+
+<script>
+  const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+
+  function switchTheme(e) {
+    if (e.target.checked) {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light'); //add this
+    }
+    else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark'); //add this
+    }
+  }
+
+  toggleSwitch.addEventListener('change', switchTheme, false);
+
+  const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+
+if (currentTheme) {
+    document.documentElement.setAttribute('data-theme', currentTheme);
+
+    if (currentTheme === 'light') {
+        toggleSwitch.checked = true;
+    }
+}
+</script>
