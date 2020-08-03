@@ -1,0 +1,231 @@
+body {margin:0;}
+
+:root {
+  /* dark mode */
+  --primary-color: #ffdede;
+  --secondary-color: #131313;
+  --tert-color: #666b89;
+  --smalllogo: url(20px.png);
+  --next: url(next.png);
+  --prev: url(previous.png);
+  --first: url(first.png);
+  --latest: url(latest.png);
+}
+
+[data-theme="light"] {
+  --primary-color: #131313;
+  --secondary-color: #ffdede;
+  --tert: #666b89;
+  --smalllogo: url(20pxL.png);
+  --next: url(nextL.png);
+  --prev: url(previousL.png);
+  --first: url(firstL.png);
+  --latest: url(latestL.png);
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: var(--primary-color);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index:99999;
+
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: var(--secondary-color);
+  text-align: center;
+  padding: 10px 10px;
+  font-family: Arial;
+  text-decoration: none;
+  font-size: 20px;
+  height: 20px;
+}
+
+.navbar a:hover {
+  background: var(--tert-color);
+  color: black;
+}
+
+  .main {
+  background: var(--secondary-color);
+  font-family: Arial;
+  color: var(--primary-color);
+  padding: 16px;
+  font-size: 16px;
+  height: 1200; /* Used in this example to enable scrolling */
+  text-align: center;
+}
+
+.footer {
+  position: absolute;
+  left: 0;
+  bottom: -660;
+  width: 100%;
+  background-color:var(--primary-color);
+  color: var(--secondary-color);
+  text-align: left;
+}
+
+/* logo variable */
+
+.logoimage {
+  content:var(--smalllogo);
+  float:left;
+  clear:left;
+  padding: 10px 10px;
+}
+
+.navnext {
+  content:var(--next);
+  display: inline-block;
+}
+
+.navprev{
+  content:var(--prev);
+  display: inline-block;
+}
+
+.navlatest{
+  content:var(--latest);
+  display: inline-block;
+}
+
+.navfirst{
+    content:var(--first);
+    display: inline-block;
+}
+
+/* Resize image to fit */
+
+.imgbox {
+    display: block;
+    height: 50%;
+
+}
+.center-fit {
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+}
+
+.left-fit {
+  max-width: 100%;
+  max-height: 100%;
+  float:left;
+  padding: 10px 10px;
+}
+/* Dropdown Button */
+.dropbtn {
+ background-color: var(--primary-color);
+ color: var(--secondary-color);
+ padding: 5px 5px;
+ font-size: 16px;
+ border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+ position: relative;
+ display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+ display: none;
+ position: absolute;
+ background-color: var(--primary-color);
+ box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+ z-index: 1;
+ right: auto;
+ left: 50%;
+ -webkit-transform: translate(-50%, 0);
+ -o-transform: translate(-50%, 0);
+ transform: translate(-50%, 0)
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+ color: var(--secondary-color);
+ padding: 5px 5px;
+ text-decoration: none;
+ display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: var(--tert-color);;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: var(--primary-color);}
+
+/*Simple css to style it like a toggle switch*/
+.theme-switch-wrapper {
+  display: inline-block;
+  align-items: center;
+  padding: 5px 10px;
+  em {
+    margin-left: 10px;
+    margin-top: 10px;
+    font-size: 1rem;
+  }
+}
+.theme-switch {
+  display: inline-block;
+  height: 30px;
+  position: relative;
+  align-content: right;
+  width: 60px;
+}
+
+.theme-switch input {
+  display:none;
+}
+
+.slider {
+  background-color: #000;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: .4s;
+
+
+}
+
+.slider:before {
+  background-color: #ffdede;
+  bottom: 4px;
+  content: "";
+  height: 20px;
+  left: 4px;
+  position: absolute;
+  transition: 1s;
+  width: 20px;
+    transform: translateX(3px);
+}
+
+input:checked + .slider {
+  background-color: #ffdede;
+
+}
+
+input:checked + .slider:before {
+  transform: translateX(30px);
+  background-color: #000000;
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
